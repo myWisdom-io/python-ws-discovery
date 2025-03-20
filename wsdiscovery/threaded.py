@@ -411,7 +411,7 @@ class ThreadedNetworking:
             self._addrsMonitorThread_v6 = AddressMonitorThread(self, socket.AF_INET6)
             self._addrsMonitorThread_v6.start()
         except Exception as e:
-            logger.debug("IPv6 not supported: %s", e)
+            logger.error("IPv6 not supported: %s", e)
             self._networkingThread_v6 = None
             self._addrsMonitorThread_v6 = None
         logger.debug("address monitoring threads started")
